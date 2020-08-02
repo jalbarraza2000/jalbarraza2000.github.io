@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    color: #505962;
+}
+
+.navbar {
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: white !important;
+    padding-top: 2rem;
+}
+
+.navbar-brand {
+    padding: 10px;
+    padding-left: 5rem;
+    font-size: 1.5rem;
+}
+
+.navbar-nav li {
+    padding-right: .7rem;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: black;
+}
+
+.landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: table;
+    z-index: 0;
+}
+
+.landing-wrap {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+.landing-inner {
+    background-color: white;
+    position: fixed;
+    display: table;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+}
+
+#peakPic {
+  height: auto;
+  width: 60vh;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  
+}
+
+.landing-text {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 38%;
+    z-index: 1;
+    color: black;
+    padding-left: 20rem;
+  }
+  
+  .landing-text h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+
+  }
+  
+  .landing-text h3 {
+    font-size: 2rem;
+    padding-bottom: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+
+  }
+  
+  .btn-lg {
+    font-size:18px;
+    font-family: 'Poppins', sans-serif;
+    color:black;
+    background:#fff;
+    border:3px solid black;
+    padding:8px 40px;
+    width:30%;
+    border-radius:80px;
+    font-weight:bold;
+    margin:2vh 0px;
+    transition:0.4s ease-in-out;
+  }
+
+  .btn-lg:hover {
+    cursor: pointer;
+    background: black;
+    color: white;
+  }
+
+.homeColumns {
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+
+}
+
+
+  /*============= About Me Section =============*/
+
+#about .container-fluid {
+  padding-bottom: 30px;
+  background: #333333;
+  height: 100vh;
+  width: 100%;
+}
+
+ #about .container h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    padding:100px;
+    padding-bottom: 35px;
+    color: white;
+ }
+
+.aboutme_left {
+    background: url(img/aboutme.JPG) no-repeat 0px 0px;
+    background-size: cover;
+    height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+.aboutme_right {
+  padding-left: 1em;
+}
+
+#aboutMeName h2 {
+  padding-left: 70px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: white;
+}
+
+#aboutMeShortDesc h4 {
+  padding-left: 70px;
+  padding-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: white;
+}
+
+#aboutMeDesc p {
+  padding-top: 20px;
+  padding-left: 70px;
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.socmedIcons {
+  padding-left: 70px;
+  padding-top: 20px;
+}
+
+.educIndex {
+  width: 100%;
+  max-width: 100%;
+  z-index: 1;
+}
+
+
+/*============= Education Section =============*/
+
+#education .container-fluid {
+  max-width: 1366px;
+  padding: 5em;
+}
+
+#education .container h3 {
+  font-weight: 700;
+  font-size: 3rem;
+  padding:20px;
+  padding-bottom: 50px;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.backtext {
+  padding: 3em;
+}
+
+#educationBack h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+#educationBack span{
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*============= Skills Section =============*/
+
+#skills .container-fluid {
+  background-color:white;
+  padding-bottom: 5em;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bars {
+  padding: 4em;
+  background-color: #333333;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 1);
+}
+
+#skills .container h3 {
+  font-weight: 700;
+  font-size: 3rem;
+  padding:100px;
+  padding-bottom: 35px;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+#skills .container h4{
+  font-size: 2em;
+  color: white;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bars h6 {
+  font-size: 1.2rem;
+    color: white;
+    margin-bottom: 0.6em;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 20px;
+    font-weight: 700;
+}
+
+#hobbies h5{
+  font-size: 1.2em;
+  color: white;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#hobbies .item {
+  padding: 1rem;
+}
+
+/*============= Orgs Section =============*/
+
+#orgs .container-fluid {
+  padding: 5em;
+}
+
+#org div.container {
+  justify-content: center;
+}
+
+#orgs .container h3 {
+  font-weight: 700;
+  font-size: 3rem;
+  padding:100px;
+  padding-bottom: 35px;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+#organizations h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+#organizations span{
+  font-size: 1.2rem;
+  margin-bottom: 0em;
+  font-family: 'Poppins', sans-serif;
+}
+
+#organizations p {
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*============= Projects Section =============*/
+
+#projects.bgpic {
+  background-image: url(img/bgpic.jpg);
+  background-color: #333333;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+#projects .container h3 {
+  font-weight: 700;
+  font-size: 3rem;
+  padding:100px;
+  padding-bottom: 7rem;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+#projDB h4 {
+  font-size: 1.5rem;
+  padding-left: 5rem;
+}
+
+#projDB p {
+  padding-left: 5rem;
+}
+
+.gitGrid {
+  padding: 4rem;
+}
+
+#gitBar {
+  background-color: white;
+}
