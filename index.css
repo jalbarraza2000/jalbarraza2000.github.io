@@ -7,20 +7,28 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    color: #505962;
+    color: black;
 }
 
 .navbar {
-    font-weight: 700;
-    font-size: 1.5rem;
-    background-color: white !important;
-    padding-top: 2rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background-color: white !important;
+}
+
+.navbar-brand span {
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.navbar-brand img {
+height: auto;
+width: 10vh;
 }
 
 .navbar-brand {
-    padding: 10px;
-    padding-left: 5rem;
-    font-size: 1.5rem;
+padding-left: 5rem;
+padding-bottom: 0rem;
 }
 
 .navbar-nav li {
@@ -122,6 +130,10 @@ body {
   padding-top: 7rem;
   padding-bottom: 3rem;
 
+}
+
+#loginButton {
+  width: auto;
 }
 
 

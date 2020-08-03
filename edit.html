@@ -1,43 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>Login Form</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="edit.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+<head>
+    <title>Jeric Barraza</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/LogoFinal.png">
+    <link rel="stylesheet" href="edit.css">
+</head>
 
-    <body>
-        <div class="loginBox">
-            <h1 class="text-center">Login</h1>
+<body data-spy="scroll" data-target="#navbarResponsive">
 
-            <div class="ui huge form">
-                <div class="field">
-                  <label class="loginPrompt">Email Address</label>
-                  <input type="text" id="emailAdd" placeholder="example@gmail.com" class="input">
+    <div id="home">
+
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top animated ">
+            <a class="navbar-brand" href="#">
+                <img src="img/LogoFinal.png">
+                <span>Jeric Barraza</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#orgs">Organizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                </ul>
+                <button type="submit" id="logoutButton" class="btn btn-outline-light btn-lg">Logout</button>
+            </div>
+        </nav>
+
+        <!--Landing Page-->
+
+        <div class="row justify-content-around">
+            <div class="col-md-7 text-left homeColumns">
+                <div class="landing-text text-left">
+                    <h1>Hi, I'm Jeric Barraza</h1>
+                    <h3>Welcome to my Online Portfolio!</h3>
+                    <a class="btn btn-outline-light btn-lg" href="#about">Get Started</a>
                 </div>
-                <div class="field">
-                  <label class="loginPrompt">Password</label>
-                  <input type="password" id="pass" class="input">
-                </div>
-                <button class="btn btn-outline-light btn-lg" type="button" id="submit" onclick="sendData()">Submit</button>
+            </div>
+            <div class="col-md-5 homeColumns">
+                <img src="img/pic.jpg" class="shadow mb-8" id="peakPic">
             </div>
         </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
-        <script src="semantic/semantic.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-        <script src="edit.js"></script>
+    <div id="about" class="offset">
+
+        <div class="ui modal" id="myModal">
+            <form class="ui form">
+            <h1 class="login">Login</h1>
+            <div class="field">
+              <label>Email Address</label>
+              <input type="text" id="emailAdd" placeholder="example@gmail.com" class="textInput">
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" id="pass" class="textInput">
+            </div>
+            <button class="big ui button" id="submitButton" onclick="sendData()" type="button">Submit</button>
+          </form>
+        </div>
+
+        <!--About Me Section-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container">
+                    <h3 class="text-center">About Me</h3>
+                    <div class="row">
+                        <div class="col-md-5 aboutme_left"></div>
+                        <div class="col-md-7 aboutme_right">
+                            <div id="aboutMeName"></div>
+                            <div id="aboutMeShortDesc"></div>
+                            <div id="aboutMeDesc"></div>
+                            <div class="row socmedIcons">
+                                <div class="col-md-2">
+                                    <button class="big ui circular facebook icon button" id="fbButton">
+                                        <i class="facebook icon"></i>
+                                    </button>
+                                </div>   
+
+                                <div class="col-md-2">
+                                    <button class="big ui circular linkedin icon button" id="linkedButton">
+                                        <i class="linkedin icon"></i>
+                                      </button>
+                                </div> 
+                                
+                                <div class="col-md-2">
+                                    <button class="big ui circular github icon button" id="gitButton">
+                                        <i class="github icon"></i>
+                                    </button>
+                                </div> 
+                                <button type="button" class="btn btn-outline-light btn-lg" id="editInfo" data-toggle="modal" data-target="#infoModal">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="infoModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Edit Introduction and Links</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Introduction Text</p>
+                                <input type="text" id="introduction" class="input">
+
+                                <p>Facebook Link</p>
+                                <input type="text" id="fbLink" class="input">
+
+                                <p>Github Link</p>
+                                <input type="text" id="gitLink" class="input">
+
+                                <p>LinkedIn Link</p>
+                                <input type="text" id="linkedLink" class="input">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-light btn-lg" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-outline-light btn-lg submit" onclick="readInfo()">Send</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="education" class="offset">
+
+        <!--Educational Background Section-->
+        <div class="container container-fluid">
+            <h3 class="text-center">Educational Background</h3>
+            <div class="text-center">
+                <button type="button" class="btn btn-outline-light btn-lg" id="addEduc" data-toggle="modal" data-target="#educModal">Add</button>
+            </div>
+            <div class="row justify-content-md-center" id="educationBack">
+            </div>
+
+            <div id="educModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Add New Education</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>School Name</p>
+                        <input type="text" id="schoolName" class="input">
+
+                        <p>Year Started</p>
+                        <input type="text" id="yearStarted" class="input">
+
+                        <p>Year Ended</p>
+                        <input type="text" id="yearEnded" class="input">
+
+                        <p>Course Taken</p>
+                        <input type="text" id="courseTaken" class="input">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-light btn-lg" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-outline-light btn-lg submit" onclick="addEducation()">Send</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="skills" class="offset">
+
+        <!--Skills-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container">
+                    <h3 class="text-center">Skills</h3>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-outline-light btn-lg" id="addHobby" data-toggle="modal" data-target="#hobbyModal">Add</button>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-5 bars">
+                            <h4>Technical Skills</h4>
+                            <p>I am knowledgeable in C Language, and Object-Oriented Java. I have also started to learn Python and libraries
+                                pertaining to Data Science such as Pandas, Matplotlib, Seaborn, and Scikit-Learn. I have also taken courses about UI / UX 
+                                Design and Systems Analysis. 
+                            </p>
+                            <h6>
+                                C Language
+                            </h6>
+                            <div class="ui massive star rating CLang"></div>
+
+                            <h6>
+                                Object-Oriented Java
+                            </h6>
+                            <div class="ui massive star rating JavaLang"></div>
+
+                            <h6>
+                                Python for Data Science
+                            </h6>
+                            <div class="ui massive star rating PyLang"></div>
+
+                            <h6>
+                                UI / UX Design
+                            </h6>
+                            <div class="ui massive star rating UIUX"></div>
+
+                            <h6>
+                                Systems Design and Quality Assurance
+                            </h6>
+                            <div class="ui massive star rating SRAQA"></div>
+                        </div>
+
+                        <div class="col-md-5 bars" id="hobbies">
+                            <h4>Hobbies and Interests</h4>
+                            <p>My hobbies spread across different categories such as games, and sports. I have been playing
+                                basketball since I was 9. I also enjoy building computers and mechanical keyboards.
+                                I enjoy playing video games with my friends such as Mobile Legends and Valorant.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="hobbyModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="model-title">Add New Hobby</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Hobby Name</p>
+                                <input type="text" id="hobby" class="input">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-light btn-lg" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-outline-light btn-lg submit" onclick="addHobby()">Send</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="orgs" class="offset">
+
+    <!--Organizations-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container">
+                <h3 class="text-center">Organizations</h3>
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-light btn-lg" id="addOrg" data-toggle="modal" data-target="#orgModal">Add</button>
+                </div>
+                <div class="row justify-content-center" id="organizations"> </div>
+
+               <h3 class="text-center">Gallery</h3>
+
+               <div class="row justify-content-center">
+                <div class="w-100 h-100">
+                    <div class="carousel slide" id="carouselExample" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExample" data-slide-to="1"></li>
+                            <li data-target="#carouselExample" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/sprintga.JPG" alt="First Slide" class="d-block w-100 h-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/src.JPG" alt="Second Slide" class="d-block w-100 h-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/gokscup.jpg" alt="Third Slide" class="d-block w-100 h-100">
+                            </div>
+                        </div>
+                        <a href="#carouselExample" class="carousel-control-prev" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a href="#carouselExample" class="carousel-control-next" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+               </div>
+
+               <div id="orgModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="model-title">Add New Organization</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Organization Name</p>
+                        <input type="text" id="orgName" class="input">
+
+                        <p>Year Started</p>
+                        <input type="text" id="yearStarted1" class="input">
+
+                        <p>Year Ended</p>
+                        <input type="text" id="yearEnded1" class="input">
+
+                        <p>Position</p>
+                        <input type="text" id="position" class="input">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-light btn-lg" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-outline-light btn-lg submit" onclick="addOrganization()">Send</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects" class="offset bgpic">
+    
+        <!--Projects-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container">
+                    <h3 class="text-center">Projects</h3>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-outline-light btn-lg" id="addProj" data-toggle="modal" data-target="#projModal">Add</button>
+                    </div>
+                    <div class="row justify-content-center" id="projDB"></div>
+                    <div class="row justify-content-md-center gitGrid">
+                        <button class="big ui button" id="gitBar"><i class="github icon"></i>View My Projects in Github</button>
+                    </div>
+
+                    <div id="projModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="model-title">Add New Project</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Project Name</p>
+                                <input type="text" id="projTitle" class="input">
+        
+                                <p>Project Description</p>
+                                <input type="text" id="projText" class="input">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-light btn-lg" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-outline-light btn-lg submit" onclick="addProject()">Send</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="semantic/semantic.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="edit.js"></script>
+
     </body>
-
-
-
 </html>
