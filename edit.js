@@ -22,6 +22,7 @@ var firebaseConfig = {
       console.log(user);
     } 
     else {
+      console.log("No user logged in");
       $(window).on('load', function(){        
         $('#myModal')
           .modal('setting', 'closable', false)
