@@ -23,12 +23,10 @@ var firebaseConfig = {
     } 
     else {
       console.log("No user logged in");
-      $(window).on('load', function(){  
-        console.log("Loading Modal");      
-        $('#myModal')
-          .modal('setting', 'closable', false)
-          .modal('show')
-         }); 
+      console.log("Loading Modal");      
+      $('#myModal')
+        .modal('setting', 'closable', false)
+        .modal('show')
     }
   })
 
