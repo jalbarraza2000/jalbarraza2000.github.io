@@ -132,9 +132,6 @@ padding-bottom: 0rem;
 
 }
 
-#loginButton {
-  width: auto;
-}
 
 
   /*============= About Me Section =============*/
@@ -142,7 +139,7 @@ padding-bottom: 0rem;
 #about .container-fluid {
   padding-bottom: 30px;
   background: #333333;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
