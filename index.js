@@ -273,10 +273,3 @@ $('.ui.rating.SRAQA')
 $('.ui.rating')
   .rating('disable')
 ;
-
-var login = document.querySelector('#loginButton');
-
-login.addEventListener('click', (e) => {
-  e.preventDefault();
-  window.location.href="edit.html";
-})
