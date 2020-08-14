@@ -421,8 +421,6 @@ function readInfo() {
       "linkedin": linkedLink
     })
   }
-
-  location.reload();
 }
 
 function addEducation() {
