@@ -402,11 +402,19 @@ function readInfo() {
     db.collection("others").doc("intro").update({
       "desc1": introduction
     })
+
+    .then(function() {
+      location.reload();
+    })
   }
 
   if(fbLink.length != 0) {
     db.collection("others").doc("links").update({
       "facebook": fbLink
+    })
+
+    .then(function() {
+      location.reload();
     })
   }
 
@@ -414,11 +422,19 @@ function readInfo() {
     db.collection("others").doc("links").update({
       "github": gitLink
     })
+
+    .then(function() {
+      location.reload();
+    })
   }
 
   if(linkedLink.length != 0) {
     db.collection("others").doc("links").update({
       "linkedin": linkedLink
+    })
+
+    .then(function() {
+      location.reload();
     })
   }
 }
